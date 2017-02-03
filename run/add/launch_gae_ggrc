@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# Copyright (C) 2016 Google Inc.
+# Licensed under http://www.apache.org/licenses/LICENSE-2.0 <see LICENSE file>
+
+SCRIPTPATH=$( cd "$(dirname "$0")" ; pwd -P )
+
+# Host is set to 0.0.0.0 so that the app can be accessed by the host OS
+cd "${SCRIPTPATH}/../src"
+dev_appserver.py --host 0.0.0.0 --admin_host 0.0.0.0 . --skip_sdk_update_check
