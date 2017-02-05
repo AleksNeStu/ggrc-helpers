@@ -12,8 +12,8 @@ echo "=Install system packages="
 sleep $t
 yum install python -y ; yum install -y -- '*python*' ;\
 yum install python-pip -y ; pip install --upgrade pip ;\
-yum install gcc gcc-c++ autoconf automake ccache -y ; yum groupinstall -y 'Development Tools' ;\
-echo "=Install docker=" &&\
+yum install gcc gcc-c++ autoconf automake ccache screen -y ; yum groupinstall -y 'Development Tools' ;\
+echo "=Install docker and docker-compose=" &&\
 sleep $t
 sudo tee /etc/yum.repos.d/docker.repo <<-'EOF'
 [dockerrepo]
@@ -23,7 +23,7 @@ enabled=1
 gpgcheck=1
 gpgkey=https://yum.dockerproject.org/gpg
 EOF
-yum install docker-engine ; systemctl enable docker.service ; systemctl start docker ;\
+yum install docker-engine -y; systemctl enable docker.service ; systemctl start docker ; pip install docker-compose \
 echo "=Install chrome and chromedriver=" &&\
 sleep $t
 sudo tee /etc/yum.repos.d/google-chrome.repo <<-'EOF'
@@ -42,7 +42,7 @@ yum install xorg-x11-server-Xvfb -y ; yum install xorg-x11-server-Xephyr -y &&\
 
 echo "===Install components for local python==="
 sleep $t
-pip install -U -r ./../$dir_pr/src/requirements-tester.txt &&\
+pip install -U -r ./../$dir_pr/src/requirements-dev.txt &&\
 
 
 echo "===Install components for virtualenv python==="

@@ -18,9 +18,9 @@ sleep $t
 cd ./../$dir_pr/
 BRANCH=$(git branch | grep \* | cut -d ' ' -f2)
 #cd $(find ggrc-core -maxdepth 0 -type d \( ! -name . \) -exec bash -c "cd '{}' && pwd" \;) ; pwd ;\
-git checkout release/0.9.7-Quince
+git checkout develop
 git status
-git pull origin release/0.9.7-Quince
+git pull origin develop
 REV=$(git rev-parse HEAD)
 REV_DATA=$(git show -s --format=%ci $REV)
 REV_AUTHOR=$(git --no-pager show -s --format='%an <%ae>' $REV)
