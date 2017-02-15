@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+
 helper_check_pytest_ini () {
 if grep -qF "http://dev:8080" ./../ggrc-core/test/selenium/pytest.ini
 then return 0 # true
@@ -57,5 +58,3 @@ then
 docker stop selenium_selenium_1
 fi
 }
-
-#docker build --rm .
