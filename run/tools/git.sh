@@ -36,11 +36,22 @@ BRANCH
 echo "Pull status: rev = "$REV" | data = "$REV_DATA" | author = "$REV_AUTHOR
 }
 
+git_uncommit_last () {
+cd ./../$dir_project/
+git reset --soft HEAD^
+cd ./../$dir_run/
+}
+
+git_commit_last () {
+cd ./../$dir_project/
+git add -A && git commit -m "AleksNeStu"
+cd ./../$dir_run/
+}
+
 git_create_squashed_commit () {
 cd ./../$dir_project/
 COMMITS=$(git rev-list --count HEAD ^$pr_branch)
 git reset --soft HEAD~$COMMITS
-BRANCH
 cd ./../$dir_run/
 }
 

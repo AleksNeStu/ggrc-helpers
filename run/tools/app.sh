@@ -42,7 +42,7 @@ echo "***To database reset use alias 'dev' and in bash session run 'db_reset'"
 docker exec -i ggrccore_dev_1 su root -c "
    cd /vagrant/bin
    source /vagrant/bin/init_vagrant_env
-   pip install --upgrade pip
+#   pip install --upgrade pip
    pip install cached-property==1.3.0
    echo '-db reset-'
    sleep $t

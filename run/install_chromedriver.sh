@@ -2,7 +2,7 @@
 
 
 cd temp
-wget http://chromedriver.storage.googleapis.com/2.27/chromedriver_linux64.zip
+wget http://chromedriver.storage.googleapis.com/2.29/chromedriver_linux64.zip
 unzip chromedriver_linux64.zip
 sudo cp -rf chromedriver /usr/bin/chromedriver
 sudo chown he:he /usr/bin/chromedriver
