@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-source tools/git.sh
 
 
 git_commit_last
