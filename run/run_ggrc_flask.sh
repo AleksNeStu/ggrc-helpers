@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 #set -v
-source tools/git.sh
 source tools/helper.sh
 source tools/app.sh
 
