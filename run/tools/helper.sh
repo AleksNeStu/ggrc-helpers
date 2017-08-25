@@ -58,3 +58,17 @@ then
 docker stop selenium_selenium_1
 fi
 }
+
+helper_docker_stop_ggrccore_cleandev () {
+if docker ps | grep -q "ggrccore_cleandev_1"
+then
+docker stop ggrccore_cleandev_1
+fi
+}
+
+helper_docker_stop_ggrccore_db () {
+if docker ps | grep -q "ggrccore_db_1"
+then
+docker stop ggrccore_db_1
+fi
+}

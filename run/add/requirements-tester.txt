@@ -1,6 +1,0 @@
-# Copyright (C) 2016 Google Inc.
-# Licensed under http://www.apache.org/licenses/LICENSE-2.0 <see LICENSE file>
-
-# For run host's test environment:
-docker-compose==1.8.0
-virtualenv==15.0.3
