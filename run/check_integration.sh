@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+source tools/git.sh
+
 
 echo "Git squashed commits to one"
 #git_create_squashed_commit

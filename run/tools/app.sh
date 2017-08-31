@@ -32,6 +32,18 @@ docker exec -i ggrccore_cleandev_1 su -c "
    launch_ggrc"
 }
 
+app_rerun_ggrc_flask () {
+docker exec -i ggrccore_cleandev_1 su -c "
+   cd /vagrant/bin
+   source /vagrant/bin/init_vagrant_env
+   make bower_components
+   build_css
+   build_assets
+   db_reset
+   launch_ggrc
+"
+}
+
 app_run_ggrc_flask_hidden () {
 screen -dmSU flask_hidden $(
 docker exec -i ggrccore_cleandev_1 su -c "
